@@ -1,0 +1,402 @@
+/*Importações Google Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;1,500;1,800&family=Tapestry&display=swap');
+
+/* CSS rules to specify families
+font-family: 'Rubik', sans-serif;
+font-family: 'Tapestry', cursive;
+*/
+
+/*Configuraçoes iniciais*/
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 1em 'Rubik', sans-serif;
+    background-color: #10454F;
+}
+
+h1 {
+    font: bold 1.5cm 'Tapestry', cursive;
+    color: #506266;
+}
+
+h2 {
+    font: bold 1.3cm 'Rubik', sans-serif;
+    color: #A3AB78;
+}
+
+h3 {
+    font: normal 1cm 'Rubik', sans-serif;
+    color: #A3AB78;
+}
+
+a {
+    font: normal 0.45cm 'Rubik', sans-serif;
+    color: #A3AB78;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+}
+
+p {
+    color: #A3AB78;
+}
+
+/*Layout*/
+.container {
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex2 {
+    display: flex;
+    align-items: center;
+}
+
+/*Main*/
+
+main {
+    height: 70vh;
+    background-image: url(../img/backgroud.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+}
+
+#cadastro{
+    height: 30vh;
+    background-image: url(../img/backgroud.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+}
+
+main h1 {
+    font-size: 2.5em;
+}
+
+main h2 {
+    font-size: 1em;
+    margin: 20px 0px 50px 0px;
+}
+
+/*botao main*/
+main .botao {
+    background-color: #10454F;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 10px 40px;
+    border-radius: 25em;
+}
+
+main .botao:hover {
+    color: #fff;
+    font-size: 1.7em;
+}
+
+
+/*Up page inicial*/
+#topo {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(88, 88, 88, 1);
+    border-radius: 50%;
+}
+
+#topo:hover {
+    background: rgba(88, 88, 88, 0.5);
+}
+
+/*Cabecalho*/
+header {
+    height: 7vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 9px;
+    background-color: #10454F;
+}
+
+
+#logo img {
+    width: 128px;
+    height: 128px;
+}
+
+#boxmenu {
+    display: none;
+}
+
+/*Menu*/
+label {
+    position: fixed;
+    font-size: 3em;
+    top: 15px;
+    right: 15px;
+}
+
+ul {
+    list-style: none;
+    background-color: #506266;
+    position: fixed;
+    height: 100vh;
+    top: 65px;
+    right: -100%;
+    transition: all .5s;
+}
+
+#boxmenu:checked~ul {
+    right: 0;
+}
+
+
+li {
+    padding: 20px;
+    border-bottom: 1px solid #10454F;
+}
+
+/*Sobre*/
+#sobre {
+    padding: 50px 0px;
+    background: url(../img/sobre.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#destaqueSobre{
+    display: none;
+}
+.textoSobre{
+    padding: 0px 10px;
+}
+
+.textoSobre p{
+    color: #fff;
+}
+
+
+.textoSobre h2{
+    margin-bottom: 10px;
+    font: bolder 2em 'Rubik', sans-serif;
+    color: #fff;
+}
+
+.topicos img{
+    background-color: #A3AB78;
+    padding: 5px;
+    border-radius: 25em;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.topicos{
+    margin-top: 20px;
+}
+
+/*Rodape*/
+footer{
+    height: 5vh;
+    background-position: center;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+}
+
+footer img{
+    padding: 20px 0px 0px 0px;
+    width: 40px;
+}
+
+footer p{
+    color: #fff;
+    font-size: 0.5em;
+    padding: 5px;
+}
+
+/*login*/
+#login{
+    display: none;
+}
+
+/* Smartphone*/
+@media (min-width: 576px) {
+
+    /* Layout */
+    header {
+        height: 60px;
+    }
+
+    .container {
+        max-width: 540px;
+    }
+
+    /*menu*/
+    #logo img {
+        width: 128px;
+        height: 128px;
+    }
+
+    /*main*/
+    main h1,
+    main h2 {
+        text-shadow: #000 0.05em 0.05em 0.05em;
+    }
+
+    ul {
+        top: 78px;
+    }
+
+}
+
+
+
+/* Tablet Portrait*/
+@media (min-width: 768px) {
+
+    /* Layout */
+    .container {
+        max-width: 720px;
+    }
+
+    /*main*/
+    main {
+        height: 45vh;
+    }
+
+    main h1 {
+        font-size: 5.5em;
+    }
+
+    main h2 {
+        font-size: 2em;
+    }
+
+    footer p{
+        font-size: 1em;
+    }
+
+}
+
+/* Tablet*/
+@media (min-width: 992px) {
+
+    /* Layout */
+    .container {
+        max-width: 960px;
+    }
+
+    /*main*/
+    main {
+        height: 70vh;
+    }
+
+}
+
+/* PC */
+@media (min-width: 1200px) {
+
+    /* Layout */
+    .container {
+        max-width: 1300px;
+    }
+
+    header {
+        height: 55px;
+    }
+
+
+    #logo img {
+        width: 150px;
+        height: 150px;
+        margin-top: 5px;
+    }
+
+
+    /*Sobre*/
+    #sobre{
+        background-attachment: fixed;
+    }
+
+    #destaqueSobre{
+        display: inline;
+    }
+
+    #destaqueSobre img {
+        border-radius: 50%;
+        width: 30vh;
+        margin-right: 50px;
+    }
+
+    ul #loginmenu{
+        display: none;
+    }
+
+    footer{
+        height: 10vh;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #10454F;
+        position: block;
+    }
+
+   
+}
+    @media (min-width: 1500px){
+        #login{
+            position: fixed;
+            display: inline;
+            margin-top: 10px;
+        }
+
+        label img {
+            display: none;
+        }
+
+        ul {
+            position: static;
+            height: auto;
+            background-color: transparent;
+        }
+    
+        li {
+            float: left;
+        }
+    
+        a:hover {
+            color: #fff;
+        }
+    
+        main h1 {
+            font-size: 4em;
+        }
+    
+        main h2 {
+            font-size: 2em;
+            margin: 20px 0px 50px 0px;
+        }
+    }
+
