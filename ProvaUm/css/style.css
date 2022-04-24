@@ -77,7 +77,7 @@ main {
     background-position: center;
 }
 
-#cadastro{
+#cadastro {
     height: 30vh;
     background-image: url(../img/backgroud.png);
     background-size: cover;
@@ -183,25 +183,26 @@ li {
     background-position: center;
 }
 
-#destaqueSobre{
+#destaqueSobre {
     display: none;
 }
-.textoSobre{
+
+.textoSobre {
     padding: 0px 10px;
 }
 
-.textoSobre p{
+.textoSobre p {
     color: #fff;
 }
 
 
-.textoSobre h2{
+.textoSobre h2 {
     margin-bottom: 10px;
     font: bolder 2em 'Rubik', sans-serif;
     color: #fff;
 }
 
-.topicos img{
+.topicos img {
     background-color: #A3AB78;
     padding: 5px;
     border-radius: 25em;
@@ -210,12 +211,12 @@ li {
     margin-right: 20px;
 }
 
-.topicos{
+.topicos {
     margin-top: 20px;
 }
 
 /*Rodape*/
-footer{
+footer {
     height: 5vh;
     background-position: center;
     display: block;
@@ -225,19 +226,19 @@ footer{
     background-position: center;
 }
 
-footer img{
+footer img {
     padding: 20px 0px 0px 0px;
     width: 40px;
 }
 
-footer p{
+footer p {
     color: #fff;
     font-size: 0.5em;
     padding: 5px;
 }
 
 /*login*/
-#login{
+#login {
     display: none;
 }
 
@@ -246,7 +247,7 @@ footer p{
 
     /* Layout */
     header {
-        height: 60px;
+        height: 40px;
     }
 
     .container {
@@ -294,7 +295,7 @@ footer p{
         font-size: 2em;
     }
 
-    footer p{
+    footer p {
         font-size: 1em;
     }
 
@@ -336,11 +337,11 @@ footer p{
 
 
     /*Sobre*/
-    #sobre{
+    #sobre {
         background-attachment: fixed;
     }
 
-    #destaqueSobre{
+    #destaqueSobre {
         display: inline;
     }
 
@@ -350,11 +351,11 @@ footer p{
         margin-right: 50px;
     }
 
-    ul #loginmenu{
+    ul #loginmenu {
         display: none;
     }
 
-    footer{
+    footer {
         height: 10vh;
         left: 0;
         bottom: 0;
@@ -363,40 +364,59 @@ footer p{
         position: block;
     }
 
-   
+
 }
-    @media (min-width: 1500px){
-        #login{
-            position: fixed;
-            display: inline;
-            margin-top: 10px;
-        }
 
-        label img {
-            display: none;
-        }
-
-        ul {
-            position: static;
-            height: auto;
-            background-color: transparent;
-        }
-    
-        li {
-            float: left;
-        }
-    
-        a:hover {
-            color: #fff;
-        }
-    
-        main h1 {
-            font-size: 4em;
-        }
-    
-        main h2 {
-            font-size: 2em;
-            margin: 20px 0px 50px 0px;
-        }
+@media (min-width: 1500px) {
+    #login {
+        position: fixed;
+        display: inline;
+        margin-top: 10px;
     }
 
+    label img {
+        display: none;
+    }
+
+    /*menu*/
+    .menuprincipal {
+        position: static;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .menuprincipal li {
+        position: relative;
+        float: left;
+    }
+
+    .menuprincipal li ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: none;
+        background-color: rgba(16, 69, 79, 0.7);
+    }
+
+    .menuprincipal li:hover ul, .menuprincipal li.over ul{
+        display:block;
+    }
+
+    .menuprincipal li ul li{
+        display: block;
+        width: 150px;
+    }
+
+    a:hover {
+        color: #fff;
+    }
+
+    main h1 {
+        font-size: 4em;
+    }
+
+    main h2 {
+        font-size: 2em;
+        margin: 20px 0px 50px 0px;
+    }
+}
