@@ -10,13 +10,13 @@ font-family: 'Tapestry', cursive;
 
 * {
     margin: 0;
-    border: 0;
     padding: 0;
 }
 
 body {
     font: normal 1em 'Rubik', sans-serif;
     background-color: #10454F;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -38,6 +38,11 @@ a {
     font: normal 0.45cm 'Rubik', sans-serif;
     color: #A3AB78;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover{
+    opacity: 0.7;
 }
 
 a:hover {
@@ -148,62 +153,68 @@ header {
 }
 
 /*Menu*/
-label {
-    position: fixed;
-    font-size: 3em;
-    top: 5px;
-    right: 15px;
+nav{
+    display: flex;
+    align-items: center;
 }
 
-ul {
+.nav-list{
     list-style: none;
-    background-color: #506266;
-    position: fixed;
-    height: 100vh;
-    right: -100%;
-    transition: all .5s;
-     top: 73px;
+    display: flex;
 }
 
-#boxmenu:checked~ul {
+.nav-list li{
+   letter-spacing: 3px;
+   margin: 32px; 
+}
+
+.nav-list-sub{
+    list-style: none;
+}
+
+.mobile-menu{
+    cursor: pointer;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+}
+
+.nav-list{
+    position: absolute;
+    top: 6vh;
     right: 0;
+    width: 35vw;
+    height: 92vh;
+    background: #10454F;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translate(100%);
 }
 
-
-li {
-    padding: 20px;
-    border-bottom: 1px solid #10454F;
+.nav-list li{
+    margin-left: 0;
+    opacity: 0;
 }
 
-.menuprincipal li ul {
-    position: static;
-    top: 60px;
-    left: 0;
-    display: none;
-    background-color: transparent;
-}
-
-.menuprincipal li:hover ul, .menuprincipal li.over ul{
+.mobile-menu{
     display: block;
 }
 
-.menuprincipal li ul li{
-    display: flex;
-    width: 150px;
+.nav-list.active{
+    transform: translate(0);
 }
-
-.submenu{
-    height: auto;
-}
-
-
 
 /*Sobre*/
 #sobre {
     padding: 50px 0px;
     background: url(../img/sobre.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 }
 
 #destaqueSobre {
@@ -418,7 +429,7 @@ footer p {
         top: 60px;
         left: 0;
         display: none;
-        background-color: rgba(16, 69, 79, 0.7);
+        background-color: rgba(16, 69, 79, 0.95sSS);
     }
 
     .menuprincipal li:hover ul, .menuprincipal li.over ul{

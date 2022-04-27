@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <!--
-    <script src="../js/scripts.js"></script>
--->
+    <script src="mobile-navbar.js"></script>
     <title>Eagle Vision</title>
 </head>
 
@@ -18,32 +16,33 @@
     <header>
         <div class="container flex">
             <div id="logo">
-                <img src="../img/logo.png" alt="">
+               <a href="/"> <img id="logo" src="../img/logo.png" alt=""></a>
             </div>
-            <nav id="menu">
-                <input type="checkbox" id="boxmenu">
-                <label for="boxmenu">
-                    <img src="../img/icon/menu_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-                </label>
-                <ul class="menuprincipal">
+            <nav>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line2"></div>
+                </div>
+                <ul class="nav-list">
                     <li><a href="#">Planos</a></li>
                     <li><a href="#">Funcionalidade</a>
-                        <ul class="submenu">
-                             <li><a href="#">Monitoramento</a></li>
-                             <li><a href="#">Telemetria</a></li>
-                             <li><a href="#">Manutenção</a></li>
-                             <li><a href="#">Abastecimento</a></li>
-                          </ul>
-                          <li><a href="#">A empresa</a>
-                             <ul class="submenu">
-                                  <li><a href="#">Sobre nós</a></li>
-                                  <li><a href="#">Carreira</a></li>
-                                  <li><a href="#">LGPD</a></li>
-                               </ul>
-                        </li>
+                        <ul class="nav-list-sub">
+                            <li><a href="#">Monitoramento</a></li>
+                            <li><a href="#">Telemetria</a></li>
+                            <li><a href="#">Manutenção</a></li>
+                            <li><a href="#">Abastecimento</a></li>
+                        </ul>
+                    <li><a href="#">A empresa</a>
+                        <ul class="nav-list-sub">
+                            <li><a href="#">Sobre nós</a></li>
+                            <li><a href="#">Carreira</a></li>
+                            <li><a href="#">LGPD</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#contato">Contato</a></li>
                     <li><a href="login.html">Cadastro</a></li>
-            </ul>
+                </ul>
                 <a href="#login" id="login"><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg"
                         alt="login"></a>
             </nav>
@@ -99,7 +98,8 @@
             </div>
         </div>
     </footer>
-    <a href="#inicio" id="topo"><img src="../img/icon/keyboard_arrow_up_FILL1_wght400_GRAD0_opsz48.svg" alt="topo do site"></a>
+    <a href="#inicio" id="topo"><img src="../img/icon/keyboard_arrow_up_FILL1_wght400_GRAD0_opsz48.svg"
+            alt="topo do site"></a>
 
 </body>
 
