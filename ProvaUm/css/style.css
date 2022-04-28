@@ -301,6 +301,34 @@ footer p {
     display: none;
 }
 
+#forms {
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+input, label {
+    display:block;
+}
+
+.centralized {
+    margin: auto;
+}
+
+.login-form {
+    width: fit-content;
+    padding: 10px;
+}
+
+.white-background {
+    background-color: #fff;
+}
+.field {
+    /*nada ainda*/
+}
+
 /* Smartphone*/
 @media (min-width: 576px) {
 
