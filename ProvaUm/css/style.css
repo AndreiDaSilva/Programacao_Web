@@ -262,8 +262,6 @@ header {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
-/*SubMenu*/
-
 
 /*Sobre*/
 #sobre {
@@ -335,6 +333,7 @@ footer p {
 #forms {
     background-color: #fff;
     padding: 10px;
+    height: 58vh;
 }
 
 .margin-ten {
@@ -351,6 +350,7 @@ input, label {
 
 .centralized {
     margin: auto;
+    margin-top: 7%;
 }
 
 .login-form {
