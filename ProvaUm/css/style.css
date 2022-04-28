@@ -16,8 +16,14 @@ font-family: 'Tapestry', cursive;
 body {
     font: normal 1em 'Rubik', sans-serif;
     background-color: #10454F;
-    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 
 h1 {
     font: bold 1.5cm 'Tapestry', cursive;
@@ -62,7 +68,13 @@ p {
     display: flex;
     justify-content: space-between;
 }
-
+/*
+.content {
+    flex-direction:column; 
+    display: flex;
+    justify-content: space-between;
+}
+*/
 .flex2 {
     display: flex;
     align-items: center;
