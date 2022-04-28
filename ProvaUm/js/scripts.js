@@ -3,6 +3,13 @@ import { MobileNavbar } from './mobile-navbar.js';
 const mobileNavbar = new MobileNavbar('.mobile-menu', '.nav-list', '.nav-list li');
 mobileNavbar.init();
 
+//coloca event listener para o enter em formulários
+document.querySelector('#forms').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        autenticaUsuario();
+    }
+});
+
 //autentica o usuário
 
 export function autenticaUsuario() {
@@ -15,5 +22,5 @@ export function autenticaUsuario() {
     document.cookie = `username=${userName};`;
     document.cookie = `password=${userPassword};`;
     window.alert('Usuário autenticado');
-    location.replace('index.html')
+    location.replace('index.html');
 }

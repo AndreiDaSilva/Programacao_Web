@@ -56,66 +56,42 @@
                 <h2>A sua frota, no seu olhar!</h2>
         </section>
 
-        <section id="forms" class="container2">
-            <div class="container">
-                <form action="action_page.php">
-                    <div class="row">
-                        <div class="form-label">
-                            <label for="fname">First Name</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                        </div>
+        <section id="forms">
+            <div class="container2">
+                <div class="row">
+                    <div class="form-label">
+                        <label for="nmNome" class="form-label">Nome completo:</label>
                     </div>
-                    <div class="row">
-                        <div class="form-label">
-                            <label for="lname">Last Name</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                        </div>
+                    <div class="form-field">
+                        <input type="text" name="nmPessoa" size="50" maxlength="20" placeholder="Digite seu nome" required autofocus>
                     </div>
-                    <div class="row">
-                        <div class="form-label">
-                            <label for="country">Country</label>
-                        </div>
-                        <div class="form-field">
-                        <select id="country" name="country">
-                            <option value="australia">Australia</option>
-                            <option value="canada">Canada</option>
-                            <option value="usa">USA</option>
-                        </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-label">
-                            <label for="subject">Subject</label>
-                        </div>
-                        <div class="form-field">
-                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
-            </div>
-            <div class="centralized login-form">
-                <div class="form-group">
-                    <label for="nmNome" class="form-label">Nome completo:</label>
-                    <input type="text" name="nmPessoa" size="50" maxlength="20" placeholder="Digite seu nome" required autofocus> 
                 </div>
-                <div class="form-group">
-                    <label for="tdNascimento" class="form-label">Nascimento:</label>
-                    <input type="date" name="dtNascimento">
+                <div class="row">
+                    <div class="form-label">
+                        <label for="tdNascimento" class="form-label">Nascimento:</label>
+                    </div>
+                    <div class="form-field">
+                        <input type="date" name="dtNascimento">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" name="email" size="50" maxlength="20">
+                <div class="row">
+                    <div class="form-label">
+                        <label for="email" class="form-label">Email:</label>
+                    </div>
+                    <div class="form-field">
+                        <input type="email" name="email" size="50" maxlength="20">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="tel" class="form-label">Telefone</label>
-                    <input type="tel" name="telefone" placeholder="99 99999-9999" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}">
+                <div class="row">
+                    <div class="form-label">
+                        <label for="tel" class="form-label">Telefone</label>
+                    </div>
+                    <div class="form-field">
+                        <input type="tel" name="telefone" placeholder="99 99999-9999" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}">
+                    </div>
+                </div>
+                <div class="row">
+                    <button onClick="salvarInformacoes()">Salvar</button>
                 </div>
             </div>
         </section>

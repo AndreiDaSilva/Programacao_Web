@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="../css/style.css">
-        <script type="module" src="../js/scripts.js"></script>
+        <script type="module" src="../js/scripts.js" id="script"></script>
         <title>Eagle Vision</title>
     </head>
 
@@ -57,27 +57,25 @@
         </section>
         <section id="forms">
             <div class="container2">
-                <form action="autenticaUsuario()">
-                    <div class="row">
-                        <div class="form-label">
-                            <label for="user-name">Usuário: *</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="text" id="user-name" name="user-name" placeholder="Digite seu usuário">
-                        </div>
+                <div class="row">
+                    <div class="form-label">
+                        <label for="user-name">Usuário: *</label>
                     </div>
-                    <div class="row">
-                        <div class="form-label">
-                            <label for="user-password">Senha: *</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="password" id="user-password" name="user-password">
-                        </div>
+                    <div class="form-field">
+                        <input type="text" id="user-name" name="user-name" placeholder="Digite seu usuário">
                     </div>
-                    <div class="row">
-                        <input type="submit"></input>
+                </div>
+                <div class="row">
+                    <div class="form-label">
+                        <label for="user-password">Senha: *</label>
                     </div>
-                </form>
+                    <div class="form-field">
+                        <input type="password" id="user-password" name="user-password">
+                    </div>
+                </div>
+                <div class="row">
+                    <button onClick="autenticaUsuario()">Autenticar</button>
+                </div>
             </div>
         </section>
 
