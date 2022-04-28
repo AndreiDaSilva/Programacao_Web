@@ -33,47 +33,57 @@
                                 <li><a href="#">Manutenção</a></li>
                                 <li><a href="#">Abastecimento</a></li>
                             </ul>
-                        <li><a href="#">A empresa</a>
+                        <li><a href="#">A&nbsp;empresa</a>
                             <ul>
-                                <li><a href="#">Sobre nós</a></li>
+                                <li><a href="#">Sobre&nbsp;nós</a></li>
                                 <li><a href="#">Carreira</a></li>
                                 <li><a href="#">LGPD</a></li>
                             </ul>
                         </li>
                         <li><a href="#contato">Contato</a></li>
                         <li><a href="login.html">Login</a></li>
-                        <li><a href=""></a></li>
+                        <li><a href="cadastro.html"><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg"
+                            alt="login"></a></li>
                     </ul>
-                    <a href="cadastro.html" id="login"><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg"
-                            alt="login"></a>
                 </nav>
             </div>
         </header>
 
         <!--Cadastro-->
-        <section id="cadastro">
+        <section id="cadastro" class="padding">
             <div class="container">
                 <h1>Eagle Vision</h1>
                 <h2>A sua frota, no seu olhar!</h2>
         </section>
-
-        <section id="forms" class="content">
-            <div class="centralized login-form">
-                <div class="form-group">
-                    <label class="form-label">Usuário: *</label>
-                    <input type="text" id="user-name" name="user-password" class="form-field">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Senha: *</label>
-                    <input type="password" id="user-password" name="user-password" class="form-field">
-                </div>
-                <button onClick="autenticaUsuario()">Autenticar</button>
+        <section id="forms">
+            <div class="container2">
+                <form action="autenticaUsuario()">
+                    <div class="row">
+                        <div class="form-label">
+                            <label for="user-name">Usuário: *</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" id="user-name" name="user-name" placeholder="Digite seu usuário">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-label">
+                            <label for="user-password">Senha: *</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="password" id="user-password" name="user-password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit"></input>
+                    </div>
+                </form>
             </div>
         </section>
 
         <!--Rodapé-->
-        <footer id="contato" class="content">
-            <div class="flex">
+        <footer id="contato">
+            <div class="container flex">
                 <div class="localizacao">
                     <img src="../img/icon/maps.png" alt="localizacao">
                     <p>Endereço: 1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - Emirados Árabes Unidos </p>

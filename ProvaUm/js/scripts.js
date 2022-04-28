@@ -5,7 +5,7 @@ mobileNavbar.init();
 
 //autentica o usuário
 
-function autenticaUsuario() {
+export function autenticaUsuario() {
     const userName = document.getElementById('user-name').value
     const userPassword = document.getElementById('user-password').value;
     if (!userPassword || !userPassword) {

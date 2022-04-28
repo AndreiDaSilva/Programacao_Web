@@ -171,7 +171,7 @@ header {
     position: absolute;
     top: 6vh;
     right: 0;
-    width: 35vw;
+    width: auto;
     height: 92vh;
     background: #10454F;
     flex-direction: column;
@@ -179,6 +179,7 @@ header {
     justify-content: space-around;
     transform: translate(100%);
     transition: transform 0.5s ease-in;
+    padding: 10px;
 }
 
 .nav-list{
@@ -188,7 +189,8 @@ header {
 
 .nav-list li{
    letter-spacing: 3px;
-   margin: 32px; 
+   margin: auto;
+   padding: 20px; 
 }
 
 .nav-list-sub{
@@ -333,11 +335,7 @@ footer p {
 #forms {
     background-color: #fff;
     padding: 10px;
-    height: 58vh;
-}
-
-.margin-ten {
-    margin: 10px;
+    height: 50vh;
 }
 
 .form-group {
@@ -356,16 +354,96 @@ input, label {
 .login-form {
     border: 1px solid #dadce0;
     border-radius: 8px;
-    width: fit-content;
+    width: 25%;
     padding: 10px;
-}
-.form-field {
-    /*nada ainda*/
 }
 
 .form-label {
-    font-weight: bolder;
+    font-weight: bold;
     color: #10454F;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 8px;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-login {
+    background-color: #008CBA;
+}
+.padding {
+    padding: 20px;
+}
+
+input[type=text], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+  
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-top: 6px;
+}
+
+.container2 {
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+}
+
+.container3 {
+    margin: auto;
+    width: 100%;
+}
+
+.form-label {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.form-field {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media screen and (max-width: 600px) {
+    .form-label, .form-field {
+        width: 100%;
+        margin-top: 0;
+    }
 }
 
 /* Smartphone*/
@@ -550,6 +628,10 @@ input, label {
         border-bottom: 1px solid #A3AB78;
         display: block;
         width: 150px;
+    }
+
+    .mobile-menu img {
+        width: auto;
     }
 
 }
