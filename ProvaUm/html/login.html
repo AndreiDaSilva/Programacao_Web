@@ -48,7 +48,17 @@
     </section>
 
     <section id="forms">
-
+        <div class="centralized white-background login-form">
+            <div class="form-group">
+                <label>Usuário:*</label>
+                <input type="text" id="user-name" name="user-password" class="field">
+            </div>
+            <div class="form-group">
+                <label>Senha:*</label>
+                <input type="password" id="user-password" name="user-password" class="field">
+            </div>
+            <button onClick="autenticaUsuario()">Autenticar</button>
+        </div>
     </section>
 
     <!--Rodapé-->
@@ -71,3 +81,11 @@
 </body>
 
 </html>
+<script>
+    function autenticaUsuario() {
+        let date = new Date();
+        date.setTime(date.getTime()+1000000);
+        document.cookie = `username=${document.getElementById('user-name').value}; expires=${date.toGMTString()};`;
+        document.cookie = `password=${document.getElementById('user-password').value}; expires=${date.toGMTString()};`;
+    }
+</script>
