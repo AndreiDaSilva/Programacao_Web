@@ -4,15 +4,20 @@ const mobileNavbar = new MobileNavbar('.mobile-menu', '.nav-list', '.nav-list li
 mobileNavbar.init();
 
 //coloca event listener para o enter em formulários
-document.querySelector('#forms').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
+let form = document.querySelector('#forms');
+if (form) {
+    form.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            autenticaUsuario();
+        }
+    });
+}
+let btnLogin = document.getElementById("btn-login");
+if (btnLogin) {
+    btnLogin.addEventListener('click', event => {
         autenticaUsuario();
-    }
-});
-
-let btn = document.getElementById("btn-login").addEventListener('click', event => {
-    autenticaUsuario();
-});
+    });
+}
 
 //autentica o usuário
 
