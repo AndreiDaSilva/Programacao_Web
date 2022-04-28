@@ -208,6 +208,25 @@ header {
     transform: translate(0);
 }
 
+/*SubMenu*/
+.nav-list li ul{
+    position: static;
+    background: #10454F;
+    display: none;
+    padding: 10px 15px;
+    top: auto;
+}
+
+.nav-list li:hover ul, .nav-list.over ul{
+    display: block;
+} 
+
+.nav-list li ul li{
+    border-bottom: 1px solid #A3AB78;
+    display: block;
+    width: 150px;
+}
+
 @keyframes navLinkFade {
     from{
         opacity: 0;
@@ -458,7 +477,7 @@ footer p {
         height: 0;
         top: 0;
         height: auto;
-        background: #10454F;
+        background: transparent;
     }
 
     .nav-list li {
@@ -466,11 +485,23 @@ footer p {
         opacity: 1;
     }
 
-    .nav-list-sub{
-        
+    /*SubMenu*/
+    .nav-list li ul{
+        position: absolute;
+        background: #10454F;
+        display: none;
+        padding: 10px 15px;
+        top: auto;
     }
 
+    .nav-list li:hover ul, .nav-list.over ul{
+        display: block;
+    } 
 
+    .nav-list li ul li{
+        border-bottom: 1px solid #A3AB78;
+        display: block;
+        width: 150px;
+    }
 
-    
 }
