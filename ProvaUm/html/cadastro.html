@@ -58,15 +58,14 @@
 
         <section id="forms" class="content">
             <div class="centralized login-form">
-                <div class="form-group">
-                    <label class="form-label">Usuário: *</label>
-                    <input type="text" id="user-name" name="user-password" class="form-field">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Senha: *</label>
-                    <input type="password" id="user-password" name="user-password" class="form-field">
-                </div>
-                <button onClick="autenticaUsuario()">Autenticar</button>
+                <label for="nmNome">Nome completo:</label>
+                <input type="text" name="nmPessoa" size="50" maxlength="20" placeholder="Digite seu nome" required autofocus> 
+                <label for="tdNascimento">Nascimento:</label>
+                <input type="date" name="dtNascimento">
+                <label for="email">Email:</label>
+                <input type="email" name="email" size="50" maxlength="20">
+                <label for="tel">Telefone</label>
+                <input type="tel" name="telefone" placeholder="99 99999-9999" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}">
             </div>
         </section>
 
