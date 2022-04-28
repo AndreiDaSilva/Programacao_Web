@@ -165,6 +165,7 @@ header {
 }
 
 /*Menu*/
+
 .nav-list{
     list-style: none;
     display: flex;
@@ -215,7 +216,9 @@ header {
 }
 
 .mobile-menu{
-    display: block;
+    display: fixed;
+    margin-right: 1vh;
+    margin-top: 1vh;   
 }
 
 .nav-list.active{
@@ -444,6 +447,13 @@ button {
         width: 100%;
         margin-top: 0;
     }
+    .nav-list{
+        top: 8vh;
+    }
+    .mobile-menu{
+        margin-right: 3vh;
+    }
+
 }
 
 /* Smartphone*/
@@ -458,6 +468,8 @@ button {
     .container {
         max-width: 540px;
     }
+
+    
 
     /*menu*/
     #logo img {
@@ -475,7 +487,9 @@ button {
         top: 65px;
     }
 
-
+    .nav-list{
+        top: 17vh;
+    }
 }
 
 
@@ -504,7 +518,13 @@ button {
     footer p {
         font-size: 1em;
     }
-
+    .nav-list{
+        top: 6.3vh;
+    }
+    .mobile-menu{
+        margin-top: 0;
+        margin-right: 3vh;
+    }
 }
 
 /* Tablet*/
@@ -596,11 +616,9 @@ button {
     .nav-list{
         list-style: none;
         display: flex;
-        position: static;
+        position: fixed;
         flex-direction: row;
         transform: translateX(0%);
-        align-items: flex-start;
-        height: 0;
         top: 0;
         height: auto;
         background: transparent;
