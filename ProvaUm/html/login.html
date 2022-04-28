@@ -15,24 +15,35 @@
 
 <body>
     <!--Cabecalho-->
-    <header id="inicio">
+    <header>
         <div class="container flex">
             <div id="logo">
-                <img src="../img/logo.png" alt="">
+               <a href="index.html"> <img id="logo" src="../img/logo.png" alt=""></a>
             </div>
-            <nav id="menu">
-                <input type="checkbox" id="boxmenu">
-                <label for="boxmenu">
-                    <img src="../img/icon/menu_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-                </label>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servico">Serviços</a></li>
+            <nav>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#">Planos</a></li>
+                    <li><a href="#">Funcionalidade</a>
+                        <ul class="nav-list-sub clearfix">
+                            <li><a href="#">Monitoramento</a></li>
+                            <li><a href="#">Telemetria</a></li>
+                            <li><a href="#">Manutenção</a></li>
+                            <li><a href="#">Abastecimento</a></li>
+                        </ul>
+                    <li><a href="#">A empresa</a>
+                        <ul class="nav-list-sub clearfix">
+                            <li><a href="#">Sobre nós</a></li>
+                            <li><a href="#">Carreira</a></li>
+                            <li><a href="#">LGPD</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#contato">Contato</a></li>
-                    <div id="loginmenu">
-                        <li><a href="#">Login</a></li>
-                    </div>
+                    <li><a href="login.html">Cadastro</a></li>
                 </ul>
                 <a href="#login" id="login"><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg"
                         alt="login"></a>
@@ -48,14 +59,14 @@
     </section>
 
     <section id="forms">
-        <div class="centralized white-background login-form">
+        <div class="centralized login-form">
             <div class="form-group">
-                <label>Usuário:*</label>
-                <input type="text" id="user-name" name="user-password" class="field">
+                <label class="form-label">Usuário: *</label>
+                <input type="text" id="user-name" name="user-password" class="form-field">
             </div>
             <div class="form-group">
-                <label>Senha:*</label>
-                <input type="password" id="user-password" name="user-password" class="field">
+                <label class="form-label">Senha: *</label>
+                <input type="password" id="user-password" name="user-password" class="form-field">
             </div>
             <button onClick="autenticaUsuario()">Autenticar</button>
         </div>
@@ -81,11 +92,19 @@
 </body>
 
 </html>
+<script src="../js/mobile-navbar.js"></script>
 <script>
     function autenticaUsuario() {
         let date = new Date();
         date.setTime(date.getTime()+1000000);
-        document.cookie = `username=${document.getElementById('user-name').value}; expires=${date.toGMTString()};`;
-        document.cookie = `password=${document.getElementById('user-password').value}; expires=${date.toGMTString()};`;
+        const userName = document.getElementById('user-name').value
+        const userPassword = document.getElementById('user-password').value;
+        if (!userPassword || !userPassword) {
+            window.alert("Preencha os campos obrigatórios");
+            return;
+        }
+        document.cookie = `username=${userName}; expires=${date.toGMTString()};`;
+        document.cookie = `password=${userPassword}; expires=${date.toGMTString()};`;
+        window.alert("Usuário autenticado");
     }
 </script>

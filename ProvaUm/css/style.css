@@ -321,7 +321,12 @@ footer p {
 }
 
 #forms {
-    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.margin-ten {
+    margin: 10px;
 }
 
 .form-group {
@@ -337,15 +342,18 @@ input, label {
 }
 
 .login-form {
+    border: 1px solid #dadce0;
+    border-radius: 8px;
     width: fit-content;
     padding: 10px;
 }
-
-.white-background {
-    background-color: #fff;
-}
-.field {
+.form-field {
     /*nada ainda*/
+}
+
+.form-label {
+    font-weight: bolder;
+    color: #10454F;
 }
 
 /* Smartphone*/
