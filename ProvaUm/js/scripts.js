@@ -1,7 +1,5 @@
-import { MobileNavbar } from './mobile-navbar.js';
-//inicia o nav bar
-const mobileNavbar = new MobileNavbar('.mobile-menu', '.nav-list', '.nav-list li');
-mobileNavbar.init();
+var loginDefault = "../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg"
+var loginEfetuado = "../img/andreia.jpeg";
 
 //coloca event listener para o enter em formulários
 let form = document.querySelector('#forms');
@@ -20,7 +18,6 @@ if (btnLogin) {
 }
 
 //autentica o usuário
-
 function autenticaUsuario() {
     const userName = document.getElementById('user-name').value
     const userPassword = document.getElementById('user-password').value;
@@ -32,4 +29,5 @@ function autenticaUsuario() {
     document.cookie = `password=${userPassword};`;
     window.alert('Usuário autenticado');
     location.replace('index.html');
+    imgdocument.getElementById('img-usuario').src = loginEfetuado;
 }
