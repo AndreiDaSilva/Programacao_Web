@@ -18,10 +18,23 @@ body {
     background-color: #10454F;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    filter: none;
 }
 
-body.active{
+.inverte {
+    font: normal 1em 'Rubik', sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     filter: invert(1);
+}
+
+.inverte input{
+    background-color: #04AA6D;
+}
+
+.inverte button{
+    border-radius: 25vh;
+    background-image: linear-gradient(to right, yellow, green);
 }
 
 body::-webkit-scrollbar {

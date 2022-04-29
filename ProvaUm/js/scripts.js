@@ -38,3 +38,9 @@ function mudaImgLogin() {
         document.getElementById('img-usuario').innerHTML = '<a href="cadastro.html"><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg" alt="login"></a>'
     }
 }
+
+//inverter cor
+function inverterCor(id, styloRemove, styloAdd){
+   document.getElementById(id).classList.remove(styloRemove);
+   document.getElementById(id).classList.add(styloAdd);
+}
