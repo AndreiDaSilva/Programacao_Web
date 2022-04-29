@@ -28,6 +28,15 @@ body {
     filter: invert(1);
 }
 
+.inverte input{
+    background-color: #04AA6D;
+}
+
+.inverte button{
+    border-radius: 25vh;
+    background-image: linear-gradient(to right, yellow, green);
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
