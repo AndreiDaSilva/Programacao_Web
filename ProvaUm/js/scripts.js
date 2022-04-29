@@ -10,9 +10,13 @@ document.querySelector('#forms').addEventListener('keypress', function (e) {
     }
 });
 
+let btn = document.getElementById("btn-login").addEventListener('click', event => {
+    autenticaUsuario();
+});
+
 //autentica o usuário
 
-export function autenticaUsuario() {
+function autenticaUsuario() {
     const userName = document.getElementById('user-name').value
     const userPassword = document.getElementById('user-password').value;
     if (!userPassword || !userPassword) {
