@@ -32,7 +32,8 @@ function autenticaUsuario() {
 }
 
 function mudaImgLogin() {
-    if (document.cookie !== '') {
+    const allCookies = document.cookie.split(';');
+    if (allCookies.length >= 2) {
         document.getElementById('img-usuario').innerHTML = '<a href="cadastro.html"><img src="../img/andreia.jpeg" alt="login" class="img-andreia"></a>'
     } else {
         document.getElementById('img-usuario').innerHTML = '<a href="cadastro.html"><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg" alt="login"></a>'
