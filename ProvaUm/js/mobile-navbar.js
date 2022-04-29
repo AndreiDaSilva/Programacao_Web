@@ -1,4 +1,4 @@
-export class MobileNavbar {
+class MobileNavbar {
   constructor(mobileMenu, navList, navLinks) {
     this.mobileMenu = document.querySelector(mobileMenu);
     this.navList = document.querySelector(navList);
@@ -36,3 +36,5 @@ export class MobileNavbar {
   }
 }
 
+const mobileNavbar = new MobileNavbar('.mobile-menu', '.nav-list', '.nav-list li');
+mobileNavbar.init();
