@@ -29,5 +29,12 @@ function autenticaUsuario() {
     document.cookie = `password=${userPassword};`;
     window.alert('Usuário autenticado');
     location.replace('index.html');
-    imgdocument.getElementById('img-usuario').src = loginEfetuado;
+}
+
+function mudaImgLogin() {
+    if (document.cookie !== '') {
+        document.getElementById('img-usuario').innerHTML = '<a href="cadastro.html"><img src="../img/andreia.jpeg" alt="login" class="img-andreia"></a>'
+    } else {
+        document.getElementById('img-usuario').innerHTML = '<a href="cadastro.html"><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg" alt="login"></a>'
+    }
 }
