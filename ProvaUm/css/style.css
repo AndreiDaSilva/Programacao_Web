@@ -20,6 +20,10 @@ body {
     scrollbar-width: none;
 }
 
+body.active{
+    filter: invert(1);
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
