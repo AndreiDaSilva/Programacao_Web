@@ -338,7 +338,7 @@ footer p {
 #forms {
     background-color: #fff;
     padding: 10px;
-    height: 50vh;
+    height: auto;
 }
 
 .form-group {
@@ -383,17 +383,23 @@ input, label {
 .btn-login {
     background-color: #008CBA;
 }
+
 .padding {
     padding: 20px;
+    margin-top: 5vh;
 }
 
-input[type=text], input[type="password"] {
+input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    content: "";
+    display: table;
+    clear: both;    
+    resize: none;
 }
 
 label {
@@ -414,13 +420,8 @@ button {
 
 .container2 {
     padding: 20px;
+    width: 90%;
     margin: auto;
-    width: 50%;
-}
-
-.container3 {
-    margin: auto;
-    width: 100%;
 }
 
 .form-label {
@@ -440,6 +441,7 @@ button {
     display: table;
     clear: both;
 }
+
 
 
 @media screen and (max-width: 600px) {
@@ -466,7 +468,7 @@ button {
     }
 
     .container {
-        max-width: 540px;
+        max-width: 150vh;
     }
 
     /*menu*/
@@ -488,6 +490,18 @@ button {
     .nav-list{
         top: 17vh;
     }
+
+    .padding {
+        padding: 20px;
+        margin-top: 19vh;
+    }
+
+    #forms {
+        background-color: #fff;
+        padding: 10px;
+        height: auto;
+    }
+    
 }
 
 
@@ -523,6 +537,24 @@ button {
         margin-top: 0;
         margin-right: 3vh;
     }
+    .container2 {
+        padding: 20px;
+        margin: auto;
+        width: 50%;
+    }
+
+    .padding {
+        padding: 20px;
+        margin-top: 5vh;
+    }
+
+    #forms {
+        background-color: #fff;
+        padding: 10px;
+        height: 50vh;
+    }
+
+
 }
 
 /* Tablet*/
@@ -530,11 +562,22 @@ button {
 
     /* Layout */
     .container {
-        max-width: 960px;
+        max-width: 120vh;
     }
 
     /*main*/
     main {
+        height: 70vh;
+    }
+
+    .padding {
+        padding: 20px;
+        margin-top: 7vh;
+    }
+
+    #forms {
+        background-color: #fff;
+        padding: 10px;
         height: 70vh;
     }
 
@@ -586,7 +629,12 @@ button {
         position: block;
     }
 
-
+    #forms {
+        background-color: #fff;
+        padding: 10px;
+        height: aut;
+    }
+    
 }
 
 @media (min-width: 1500px) {
