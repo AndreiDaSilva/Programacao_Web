@@ -18,9 +18,13 @@ body {
     background-color: #10454F;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    filter: none;
 }
 
-body.active{
+.inverte {
+    font: normal 1em 'Rubik', sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     filter: invert(1);
 }
 

@@ -33,3 +33,9 @@ function autenticaUsuario() {
     window.alert('Usuário autenticado');
     location.replace('index.html');
 }
+
+//inverter cor
+function inverterCor(id, styloRemove, styloAdd){
+   document.getElementById(id).classList.remove(styloRemove);
+   document.getElementById(id).classList.add(styloAdd);
+}
