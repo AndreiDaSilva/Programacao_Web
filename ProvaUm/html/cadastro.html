@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/style.css">
-        <script src="../js/scripts.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
     <title>Eagle Vision</title>
 </head>
 
@@ -17,7 +18,7 @@
     <header>
         <div class="container flex">
             <div id="logo">
-            <a href="index.html"> <img id="logo" src="../img/logo.png" alt=""></a>
+                <a href="index.html"> <img id="logo" src="../img/logo.png" alt=""></a>
             </div>
             <nav>
                 <div class="mobile-menu">
@@ -44,9 +45,9 @@
                     <li><a href="#contato">Contato</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="cadastro.html">Cadastro</a></li>
-                    <li id="img-usuario"><a href="user.html"></a><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg"
-                        alt="login" ></a></li>
-               </ul>
+                    <li id="img-usuario"><a href="user.html"></a><img
+                            src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg" alt="login"></a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -60,13 +61,13 @@
 
     <section id="forms">
         <div class="container2">
-           
+
             <div class="row">
                 <div class="form-label">
                     <label for="tdNascimento" class="form-label">ID:</label>
                 </div>
                 <div class="form-field">
-                    <input type="text" name="id">
+                    <input type="number" name="id" placeholder="Geração automática">
                 </div>
             </div>
             <div class="row">
@@ -74,7 +75,7 @@
                     <label for="email" class="form-label">Email:</label>
                 </div>
                 <div class="form-field">
-                    <input type="email" name="email" size="50" maxlength="20">
+                    <input type="email" name="email" size="50" maxlength="20" placeholder="exemplo@exemplo.com">
                 </div>
             </div>
             <div class="row">
@@ -90,26 +91,37 @@
                     <label for="image" class="form-label">Empresa:</label>
                 </div>
                 <div class="form-field">
-                    <input type="text" name="dtEmpresa">
+                    <input type="text" name="dtEmpresa" placeholder="Nome da empresaa">
                 </div>
             </div>
             <div class="row">
                 <div class="form-label">
-                    <label for="image" class="form-label">Cargo:</label>
+                    <label for="Cargo" class="form-label">Cargo:</label>
                 </div>
                 <div class="form-field">
-                    <input type="text" name="dtEmpresa">
+                    <select id="Cargo">
+                        <option label="Proprietário"></option>
+                        <option label="CEO"></option>
+                        <option label="Gerente"></option>
+                        <option label="Financeiro"></option>
+                        <option label="Consultoria"></option> 
+                        <option label="Logística"></option> 
+                        <option label="Administração"></option> 
+                        <option label="Marketing"></option> 
+                        <option label="Vendas"></option> 
+                        <option label="Outro"></option>       
+                    </select>
                 </div>
             </div>
             <div class="row">
                 <div class="form-label">
-                    <label for="image" class="form-label">Empresa:</label>
+                    <label for="image" class="form-label">Observação:</label>
                 </div>
                 <div class="form-field">
-                    <input type="text" name="dtEmpresa">
+                    <input type="text" name="dtEmpresa" placeholder="Deixe uma observação">
                 </div>
             </div>
-            
+
             <div class="row">
                 <button onClick="salvarInformacoes()">Cadastrar</button>
             </div>
@@ -134,4 +146,5 @@
 
     <script src="../js/mobile-navbar.js"></script>
 </body>
+
 </html>
