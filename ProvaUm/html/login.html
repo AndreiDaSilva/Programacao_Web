@@ -58,27 +58,17 @@
                 <h2>A sua frota, no seu olhar!</h2>
             </main>
         <section id="forms">
-            <div class="container2">
-                <div class="row">
-                    <div class="form-label">
-                        <label for="user-name">Usuário: *</label>
-                    </div>
-                    <div class="form-field">
-                        <input type="text" id="user-name" name="user-name" placeholder="Digite seu usuário">
-                    </div>
+            <form>
+                <div class="mb-3">
+                    <label for="user-name" class="form-label">Usuário: *</label>
+                    <input class="form-control" type="text" id="user-name" name="user-name" placeholder="Digite seu usuário" required>
                 </div>
-                <div class="row">
-                    <div class="form-label">
-                        <label for="user-password">Senha: *</label>
-                    </div>
-                    <div class="form-field">
-                        <input type="password" id="user-password" name="user-password">
-                    </div>
+                <div class="mb-3">
+                    <label for="user-password" class="form-label">Senha: *</label>
+                    <input type="password" class="form-control" id="user-password" name="user-password" required>
                 </div>
-                <div class="row">
-                    <button id="btn-login" onclick="autenticaUsuario()">Autenticar</button>
-                </div>
-            </div>
+                <button type="button" class="btn btn-primary" onclick="autenticaUsuario()">Autenticar</button>
+            </form>
         </section>
 
         <!--Rodapé-->
