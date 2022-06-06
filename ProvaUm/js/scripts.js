@@ -115,5 +115,7 @@ function editarLinha(){
 }
 
 function excluirLinha(){
-    
+    $('button.excluir').click(function () {
+       $(this).parent().parent().remove(); 
+    });
 }
