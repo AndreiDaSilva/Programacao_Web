@@ -14,7 +14,7 @@
     <title>Eagle Vision</title>
 </head>
 
-<body onload="mudaImgLogin()">
+<body onload="montaElementosCadastro()">
     <!--Cabecalho-->
     <header>
         <div class="container flex">
@@ -61,7 +61,7 @@
         </main>
         
     <section id="forms" class="altura-ajustavel">
-        <form>
+        <form onsubmit="return false;">
             <div class="mb-3">
                 <label for="codigo" class="form-label">Código:</label>
                 <input class="form-control" type="number" id="codigo" name="codigo" placeholder="Código" required>
@@ -72,15 +72,16 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" for="tel">Telefone:</label>
-                <input type="tel" class="form-control" id="tel" placeholder="99 99999-9999" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" required>
+                <input type="tel" name="telefone" class="form-control" id="tel" placeholder="99 99999-9999" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="empresa">Empresa:</label>
-                <input type="text" class="form-control" placeholder="Nome da empresa" id="empresa" required>
+                <input type="text" name="empresa" class="form-control" placeholder="Nome da empresa" id="empresa" required>
             </div>
             <div class="mb-3">
                 <label for="cargo" class="form-label">Cargo:</label>
-                <select id="cargo" name="cargo" class="form-select">
+                <select id="cargo" name="cargo" class="form-select" required>
+                    <option label=""></option>
                     <option label="Proprietário"></option>
                     <option label="CEO"></option>
                     <option label="Gerente"></option>
@@ -93,9 +94,30 @@
                     <option label="Outro"></option>       
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="#contato">
+            <button type="submit" class="btn btn-primary" onclick="salvarInformacoes()">Salvar</button></a>
         </form>
     </section>
+
+    <!--Tabela-->
+    <div class="table-responsive-sm" >
+        <table id="tbl" class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+              </tr>
+            </thead>
+            <tbody id="conteudoTabela">
+
+            </tbody>  
+          </table>
+    </div>
 
     <footer id="contato">
         <div class="container flex">

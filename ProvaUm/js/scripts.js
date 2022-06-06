@@ -57,6 +57,9 @@ function salvarInformacoes() {
         if (idx === 'length') {
             break;
         }
+        if(!inputs[idx].value){
+            return;
+        }
         //está adicionando o atributo do objeto e seu respectivo valor
         novoCadastro[inputs[idx].name] = inputs[idx].value;
     }
@@ -65,18 +68,52 @@ function salvarInformacoes() {
         if (idx === 'length') {
             break;
         }
+        if (!selects[idx].selectedIndex) {
+            return;
+        }
         //está adicionando o atributo do objeto e seu respectivo valor
         novoCadastro[selects[idx].name] = selects[idx].options[selects[idx].selectedIndex].label;
     }
     let cadastros = getCadastros();
     cadastros.push(novoCadastro);
     localStorage.setItem('cadastros', JSON.stringify(cadastros));
-    showNotification();
+    montaItensTabela([novoCadastro]);
 }
 
 function getCadastros() {
-    if (typeof (Storage) !== undefined) {
+    if (typeof (Storage) !== undefined && localStorage.getItem('cadastros')) {
         return JSON.parse(localStorage.getItem('cadastros'));
     }
     return [];
+}
+
+function montaItensTabela(cadastros){
+    let conteudoTabela = document.getElementById('conteudoTabela');
+    cadastros.forEach(c => {
+        const linha = document.createElement('tr');
+        for(idx = 0; idx < 7; idx++){
+            linha.appendChild(document.createElement('td'));
+        }
+        linha.cells[0].innerHTML = c.codigo;
+        linha.cells[1].innerHTML = c.email;
+        linha.cells[2].innerHTML = c.telefone;
+        linha.cells[3].innerHTML = c.empresa;
+        linha.cells[4].innerHTML = c.cargo;
+        linha.cells[5].innerHTML = '<button class="editar" onclick="editarLinha()"></button>';
+        linha.cells[6].innerHTML = '<button class="excluir" onclick="excluirLinha()"></button>';
+        conteudoTabela.appendChild(linha);
+    }); 
+}
+
+function montaElementosCadastro(){
+    mudaImgLogin();
+    montaItensTabela(getCadastros());
+}
+
+function editarLinha(){
+
+}
+
+function excluirLinha(){
+    
 }
