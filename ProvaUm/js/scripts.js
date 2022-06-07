@@ -108,6 +108,7 @@ function montaItensTabela(cadastros){
 function montaElementosCadastro(){
     mudaImgLogin();
     montaItensTabela(getCadastros());
+    
 }
 
 function editarLinha(){
