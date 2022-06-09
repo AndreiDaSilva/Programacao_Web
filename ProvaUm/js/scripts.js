@@ -18,7 +18,9 @@ if (btnLogin) {
 }
 
 //inicia o localStorage para o que será cadastrado
-localStorage.setItem('cadastros', JSON.stringify([]));
+if (typeof (Storage) !== undefined && !localStorage.getItem('cadastros')) {
+    localStorage.setItem('cadastros', JSON.stringify([]));
+}
 
 
 //autentica o usuário
@@ -51,33 +53,53 @@ function inverterCor(id, styloRemove, styloAdd){
 }
 
 function salvarInformacoes() {
-    const novoCadastro = {};
-    const inputs = document.getElementsByTagName('input');
-    for (idx in inputs) {
-        if (idx === 'length') {
-            break;
-        }
-        if(!inputs[idx].value){
-            return;
-        }
-        //está adicionando o atributo do objeto e seu respectivo valor
-        novoCadastro[inputs[idx].name] = inputs[idx].value;
+    const novoCadastro = montaNovoCadastro();
+    if (!novoCadastro) {
+        return;
     }
-    const selects = document.getElementsByTagName('select');
-    for (idx in selects) {
-        if (idx === 'length') {
-            break;
-        }
-        if (!selects[idx].selectedIndex) {
-            return;
-        }
-        //está adicionando o atributo do objeto e seu respectivo valor
-        novoCadastro[selects[idx].name] = selects[idx].options[selects[idx].selectedIndex].label;
-    }
+    limpaCamposCadastro();
     let cadastros = getCadastros();
     cadastros.push(novoCadastro);
     localStorage.setItem('cadastros', JSON.stringify(cadastros));
-    montaItensTabela([novoCadastro]);
+    montaItensTabela([novoCadastro], cadastros.length - 1);
+}
+
+function montaNovoCadastro() {
+    const novoCadastro = {};
+    const camposFormulario = getCamposFormulario();
+    for (idx in camposFormulario) {
+        if (idx === 'entries') {
+            break;
+        }
+        //está adicionando o atributo do objeto e seu respectivo valor
+        if (camposFormulario[idx].tagName === ('INPUT')) {
+            if(!camposFormulario[idx].value){
+                return null;
+            }
+            novoCadastro[camposFormulario[idx].name] = camposFormulario[idx].value;
+        } else {
+            if (!camposFormulario[idx].selectedIndex) {
+                return null;
+            }
+            novoCadastro[camposFormulario[idx].name] = camposFormulario[idx].options[camposFormulario[idx].selectedIndex].label;
+        }
+    }
+    return;
+}
+
+function limpaCamposCadastro() {
+    const camposFormulario = getCamposFormulario();
+    for (idx in  camposFormulario) {
+        if (camposFormulario[idx].tagName === ('INPUT')) {
+            camposFormulario[idx].value = '';
+        } else {
+            camposFormulario[idx].selectedIndex = 0;
+        }
+    }
+}
+
+function getCamposFormulario() {
+    return document.querySelectorAll('input, select');
 }
 
 function getCadastros() {
@@ -87,10 +109,11 @@ function getCadastros() {
     return [];
 }
 
-function montaItensTabela(cadastros){
+function montaItensTabela(cadastros, lastIdx){
     let conteudoTabela = document.getElementById('conteudoTabela');
-    cadastros.forEach(c => {
+    cadastros.forEach((c, rowIdx) => {
         const linha = document.createElement('tr');
+        linha.id = `${lastIdx ? lastIdx : rowIdx}`
         for(idx = 0; idx < 7; idx++){
             linha.appendChild(document.createElement('td'));
         }
@@ -99,7 +122,7 @@ function montaItensTabela(cadastros){
         linha.cells[2].innerHTML = c.telefone;
         linha.cells[3].innerHTML = c.empresa;
         linha.cells[4].innerHTML = c.cargo;
-        linha.cells[5].innerHTML = '<button class="editar" onclick="editarLinha()"></button>';
+        linha.cells[5].innerHTML = '<button class="editar" onclick="editarLinha(this)"></button>';
         linha.cells[6].innerHTML = '<button class="excluir" onclick="excluirLinha()"></button>';
         conteudoTabela.appendChild(linha);
     }); 
@@ -108,11 +131,30 @@ function montaItensTabela(cadastros){
 function montaElementosCadastro(){
     mudaImgLogin();
     montaItensTabela(getCadastros());
-    
 }
 
-function editarLinha(){
-
+function editarLinha(btnClicked) {
+    const cadastros = getCadastros();
+    const cadastroEditando = cadastros[parseInt(btnClicked.parentElement.parentElement.id)];
+    const camposFormulario = getCamposFormulario();
+    for (idx in camposFormulario) {
+        if (idx === 'entries') {
+            break;
+        }
+        if (camposFormulario[idx].tagName === ('INPUT')) {
+            camposFormulario[idx].value = cadastroEditando[camposFormulario[idx].name];
+        } else {
+            let idxEncontrado = 0;
+            for (idxOption in camposFormulario[idx].options) {
+                if (camposFormulario[idx].options[idxOption].label === cadastroEditando[camposFormulario[idx].name]) {
+                    idxEncontrado = idxOption;
+                }
+            }
+            camposFormulario[idx].selectedIndex = idxEncontrado;
+        }
+    }
+    document.href = '#';
+    document.href = '#forms';
 }
 
 function excluirLinha(){
